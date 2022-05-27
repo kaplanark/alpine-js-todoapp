@@ -28,7 +28,6 @@ app.post('/todolist', async (req, res) => {
     }
     await Todo.findByIdAndUpdate({ _id: id }, data)
         .then((data) => {
-            console.log("updated: ", data);
             res.status(201).json(data)
         })
         .catch((err) => {
